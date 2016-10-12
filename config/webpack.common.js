@@ -10,7 +10,7 @@ module.exports = {
   entry: {
     'polyfills': './src/polyfills.ts',
     'vendor': ['./src/vendor.ts', './src/theme/vendor.scss' ],
-    'app': [ './src/main.ts', './src/theme/main.scss' ]           
+    'app': [ './src/theme/main.scss', './src/main.ts' ]           
   },
 
   resolve: {
@@ -34,13 +34,22 @@ module.exports = {
       {
         test: /\.css$/,
         exclude: helpers.root('src', 'app'),
-        loader: ExtractTextPlugin.extract('style', 'css?sourceMap')
+        loader: ExtractTextPlugin.extract('style', 'css', 'postcss')
       },    
       {
         test: /\.scss$/,        
-        loader: extractSCSS.extract(['css?sourceMap', 'sass'])
+        loader: extractSCSS.extract(['css?sourceMap', 'postcss', 'sass'])
+      },
+      {
+        test: /\.(eot|svg|ttf|woff(2)?)(\?v=\d+\.\d+\.\d+)?/,
+        loader: 'url'
       }    
     ]
+  },
+  postcss: function () {
+    return [      
+      require('autoprefixer')
+    ];
   },
 
   plugins: [

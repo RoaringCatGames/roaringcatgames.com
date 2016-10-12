@@ -1,0 +1,106 @@
+rcg-header{
+  background: $headerColor;
+
+  .main-links{	
+    @include lr-zero();
+
+    
+
+    list-style: none;				
+    font-size: inherit;
+    background: $bgHighlightColor;
+    margin-bottom: 0;		
+    li{
+      @include lr-zero();		
+    }
+
+    a{
+      display: block;
+      margin-bottom: 2px;	
+      padding-top: 10px;
+      padding-bottom: 10px;
+      z-index: 102;
+    }
+    
+    li:hover a,
+    li:focus a,
+    li a.current{	
+      color: $linkAltColor;
+      margin-bottom: 0;
+      border-bottom: 2px solid $sectionBorderColor;/*$linkAltColor;*/
+      background-color: $activeLinkBgColor;
+    }
+
+    .social a{
+      display: inline-block;	
+      margin-left: 0.5em;
+      margin-right: 0.5em;	
+    }
+
+    li.social:hover,
+    li.social:focus{
+      background-color: $activeLinkBgColor;
+      border-bottom: 2px solid $sectionBorderColor;
+      margin-bottom: 0;
+      color: $contentLinkAltColor;
+
+      a{
+        margin-bottom: 0;			
+        border-bottom: 0;
+
+      }
+    }
+  }
+  
+  .header{
+    height: 300px;
+    margin-top: 2em;
+    background: $headerColor;
+    background-image: url('../assets/logo_no_ring.png'),					   
+              radial-gradient(ellipse farthest-side at 40% 0, $transparentWhite, $transparent);
+              /*,radial-gradient(ellipse closest-side at 50% 98%, $shadowColor, $transparent 50%);	*/
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+}
+
+/*Responsive Styles*/
+
+/*Small Styles*/
+@media only screen {
+
+ }
+
+/* Up till Large Screens*/
+@media only screen and (max-width: 40em) {		
+	rcg-header{
+    .header{
+      margin-top: 0;
+    }	
+  }
+}
+
+// Medium screens
+@media only screen and (min-width: 40.063em) {
+} /* min-width 641px, medium screens */
+
+@media only screen and (min-width: 40.063em) and (max-width: 64em) {
+} /* min-width 641px and max-width 1024px, use when QAing tablet-only issues */
+
+// Large screens
+@media only screen and (min-width: 64.063em) { 	
+
+
+	
+} /* min-width 1025px, large screens */
+
+@media only screen and (min-width: 64.063em) and (max-width: 90em) { } /* min-width 1025px and max-width 1440px, use when QAing large screen-only issues */
+
+// XLarge screens
+@media only screen and (min-width: 90.063em) { } /* min-width 1441px, xlarge screens */
+
+@media only screen and (min-width: 90.063em) and (max-width: 120em) { } /* min-width 1441px and max-width 1920px, use when QAing xlarge screen-only issues */
+
+// XXLarge screens
+@media only screen and (min-width: 120.063em) { } /* min-width 1921px, xxlarge screens */

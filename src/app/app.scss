@@ -1,6 +1,499 @@
-
-body {
-  background: #FF0000;
-  text-align: center;
-  font-weight: bold;
+@mixin lr-zero(){
+	padding-left: 0;
+	padding-right: 0;	
+	margin-left: 0;
+	margin-right: 0;
 }
+
+@import "./layout/header.scss";
+
+body{
+	font-size: $fontSize;
+	color: $textColor;
+	overflow-x: hidden;
+}
+
+h3{	
+	color: $textColor;
+	
+	a:focus,
+	a:hover{
+		color: $contentLinkAltColor;	
+	}
+}
+
+a{
+	color: $linkColor;
+	font-weight: bold;		
+}
+
+button{
+	background: $buttonColor;
+	color: $textColor;
+	border: 1px solid $textColor;
+	width: 100%;
+}
+
+button:hover,
+button:focus{
+	background-color: $buttonHoverColor;
+}
+
+section{	
+	background-image: radial-gradient(ellipse farthest-side at 40% 100%, $transparentWhite, $transparent);	
+	padding: 4em;
+	p{
+		font-size: 0.6em;
+	}
+}
+
+section,
+footer{
+	min-height: 80%;
+	display: block;
+	/*box-shadow: 0 -5px 10px $boxShadowColor;*/
+	border-top: solid 10px $sectionBorderColor;
+}
+
+footer{	
+	min-height: 50%;
+	background: $footerColor;
+	text-align: center;	
+
+	h3{		
+		font-size: inherit;		
+		font-weight: bold;
+		color: $textContrast;
+		margin-top: 0.5rem;
+		margin-bottom: 0.2rem;		
+		border-bottom: solid 2px $contentLinkAltColor;
+	}
+
+	a{		
+		color: $linkColor;
+		font-weight: normal;
+	}
+
+	a:focus,
+	a:hover,
+	a.active{		
+		color: $linkAltColor;		
+	}
+}
+
+.font-large{
+	font-size: $largeFont;
+}
+
+.font-emp{
+	font-size: $emphasized-font;
+}
+
+/*Main Layout Styles*/
+
+
+.thumbnails{
+	margin: 0.5em auto;
+}
+
+.profile-header{
+	margin: auto;
+}
+
+
+
+/*Section Styles*/
+.section-header,
+.section-footer,
+.back-footer{
+	color: $sectionBorderColor;
+	padding: 0;
+	position: absolute;
+	font-size: 2.5em;	
+	z-index: 100;
+}
+
+.section-header{
+	top: 0;
+	left: 0;	
+	margin: -0.36em 0 0 0;	
+	font-weight: bold;	
+}
+
+.section-summary{
+	width: 50%;
+	position: absolute;
+	top: 1em;
+	right: 2em;
+	text-align: right;
+	font-style: italic;
+	color: $activeLinkBgColor;
+	z-index: 100;	
+}
+
+.section-footer{	
+	bottom: 0;
+	right: 0;	
+	margin: 0 0 -0.36em 0;
+	.tall{
+		margin-bottom: 0.1em;
+	}	
+	a{
+		color: inherit;		
+	}	
+
+	a:hover,
+	a:focus{
+		color: $contentLinkAltColor;			
+	}
+}
+
+.header .section-footer{
+	margin-right: 0.3em;
+}
+
+.back-footer{	
+	position: absolute;
+	top: 0;
+	right: 5px;
+	margin: -0.34em 0 0 0;
+
+	a{
+		color: inherit;
+	}
+	a:hover,
+	a:focus{
+		color: $linkAltColor;
+	}	
+}
+
+.section-text{
+	font-size: 0.8em;
+	text-align: center;
+	z-index: 100;
+}
+
+#games{
+	background-color: $blueRowColor;/*$gameRowColor;	*/
+
+	a.gamelink{
+		display: block;
+	}
+
+	img{
+		border: solid 2px $basicBorderColor;
+		padding: 0;
+	}
+}
+
+#game-details{	
+	z-index: 101;
+	background-color: $gameDetailColor;
+	border-top: solid 10px $sectionBorderColor;
+
+	.container{
+		margin-top: 2.5em;
+
+		.game-title{
+			display: none;
+		}
+		.game-images img{
+			margin: 0 auto;
+		}
+
+		.gamelinks{
+			list-style: none;
+			margin: 0;
+
+			a{
+				padding: 5px;
+				margin: 5px;
+				text-align: center;
+				background: $sectionBorderColor;
+				border-radius: 5px;		
+				display: block;
+				width: 100%;
+
+				i{				
+					margin: 0 10px;
+				}	
+			}
+		}
+
+		.quotes{
+
+			margin: 10px 0 0 0;		
+
+			.quote{
+				border: solid 2px  $sectionBorderColor;
+				width: 100%;
+				height: 100%;
+				padding: 20px 30px;
+				background: $teamRowColor;
+				text-align: left;
+				font-style: italic;
+
+				.author{
+					font-style: bold;
+					text-align: right;
+					float: right;
+				}
+			}
+		}
+	}
+}
+
+#team,
+#current{
+	background-color: $orangeRowColor; /*$teamRowColor;*/
+
+	h2{
+		margin-bottom: 0;		
+	}
+	img{
+		border: solid 2px $basicBorderColor;
+		padding: 0;
+	}
+	img.storeLink{
+		border: none;
+	}
+
+	.user-intro{
+		padding-top: 0.3em;
+		padding-left: 1em;
+		padding-right: 1em;
+	}
+
+	.profile-links{
+		margin-top: -10px;
+		margin-bottom: -10px;
+	}
+	
+	.loi a {
+		i{ color: $loiBg; }
+		i:hover,
+		i:focus{
+			color: $loiBgAlt;
+		}		
+	}
+
+	.mike a {
+		i{ color: $mikeBg; }
+		i:hover,
+		i:focus{
+			color: $mikeBgAlt;
+		}		
+	}
+
+	.barry a {
+		i{ color: $barryBg; }
+		i:hover,
+		i:focus{
+			color: $barryBgAlt;
+		}		
+	}
+}
+
+#current{
+	border-top-width: 13px;	
+	min-height: 0;
+
+	.storeLinks{
+		position: absolute;
+		bottom: 5px;
+		left: 5px;
+	}
+	.storeAnchor{
+		float: left;
+		margin-left: 10px;
+		max-width: 172px;
+	}
+}
+
+#community{
+	background-color: $blueRowColor; /*$communityRowColor;*/
+
+	.member{
+		margin: 10px 0;		
+	}
+
+	img.th{
+		border: 0;
+		box-shadow: none;		
+	}	
+}
+
+
+
+/*Responsive Styles*/
+
+/*Small Styles*/
+@media only screen {
+	
+ }
+
+@media only screen and (max-width: 40em) {		
+	.main-links{
+		margin: 0;
+		text-align: center;
+
+		li{
+			border-bottom: solid 1px $sectionBorderColor;
+			a:hover,
+			a:focus,
+			a.current{
+				border-bottom: none;
+				margin-bottom: 0;	
+			}
+
+			a{
+				margin-bottom: 0;
+			}
+		}
+	}
+
+	a:hover,
+	a:focus{
+		border-bottom: none;
+	}
+
+	.header{
+		height: 40%;
+	}	
+
+	.section-header{				
+		font-size: 1.5em;
+	}
+
+	.section-footer{
+		display: none;		
+	}
+
+	.section-summary{
+		position: relative;
+		width: 100%;
+		padding: 0.25em;
+		text-align: center;
+		top: inherit;
+		right: inherit;
+		margin-top: -3em;
+	}
+	
+	.back-footer{
+		top: 0;
+		margin: -0.3em 0 0 0;
+		bottom: inherit;
+		font-size: 1.5em;			
+	}
+
+	#game-details{
+		padding: 2em 0;			
+
+		.container{
+			margin-top: inherit;
+			
+			/*	
+			.game-title{
+				display: block;
+			}
+			*/
+
+			.section-footer{
+				font-size: 1.5em;
+				margin: -0.35em 0 0 0;
+				bottom: inherit;			
+				top: 0;
+				right: 0;
+			}
+
+			.game-images{
+				margin: 0;
+				width: 100%;
+			}
+		}
+	}
+
+	#current{
+
+		text-align: center;
+
+		.storeLinks{
+			position: inherit;
+			display: block;
+			bottom: 0;
+		}
+		.storeAnchor{
+			position: relative;			
+			float: none;
+		}
+	}
+	#team{
+		h2{
+			font-size: $emphasized-font;
+		}
+	}
+
+}
+
+// Medium screens
+@media only screen and (min-width: 40.063em) {
+
+	.main-links{
+		position: fixed;
+		top: 0;
+		left: 0;	
+		z-index: 101;
+	}
+
+	.mobile-title{
+		display: none;
+	}
+
+	#current{	
+		padding: 0;
+		min-height: 0;
+
+		.section-summary{
+			color: #FFFFFF;
+		}
+		.banner{
+			padding-left: 0;
+			padding-right: 0;
+		}
+
+		img{
+			border: none;
+		}
+	}
+} /* min-width 641px, medium screens */
+
+@media only screen and (min-width: 40.063em) and (max-width: 64em) {
+	
+	#team{
+		.profile-links{
+			padding-left: 0;
+			padding-right: 0;
+		}		
+
+		.font-emp{
+			font-size: $fontSize/1.5;
+		}
+	}
+ } /* min-width 641px and max-width 1024px, use when QAing tablet-only issues */
+
+// Large screens
+@media only screen and (min-width: 64.063em) { 	
+
+
+	
+} /* min-width 1025px, large screens */
+
+@media only screen and (min-width: 64.063em) and (max-width: 90em) { } /* min-width 1025px and max-width 1440px, use when QAing large screen-only issues */
+
+// XLarge screens
+@media only screen and (min-width: 90.063em) { } /* min-width 1441px, xlarge screens */
+
+@media only screen and (min-width: 90.063em) and (max-width: 120em) { } /* min-width 1441px and max-width 1920px, use when QAing xlarge screen-only issues */
+
+// XXLarge screens
+@media only screen and (min-width: 120.063em) { } /* min-width 1921px, xxlarge screens */

@@ -1,0 +1,53 @@
+/*Dark Gray color Scheme*/
+$titleColor: #FCDFB0;
+$bodyColor: hsl(0, 100%, 100%);
+$bgColor: rgba(255, 255, 255, 0);
+$shadowColor: #121212;
+$boxShadowColor: hsla(190, 100%, 10%, 0.5);
+$bgHighlightColor: hsl(190, 50%, 55%);
+$linkColor: #121212;
+$linkAltColor: hsl(190, 100%, 20%);
+$activeLinkBgColor: hsl(190, 50%, 65%);
+$contentLinkAltColor: #56ACC7;
+$contentBgColor: #FFFFFF;
+$contentBorderColor: #DA8D05;
+$basicBorderColor: #000000;
+$textColor: #222222;
+$textContrast: #000000;
+$textShadowColor: hsla(0, 100%, 100%, 1);
+$buttonColor: #FF0000;
+$buttonHoverColor: #56ACC7;
+
+$headerColor: hsla(190, 100%, 70%, 0.5);
+
+
+/*
+previous green
+hsla(120, 100%, 70%, 0.5); */
+$sectionBorderColor: hsla(37, 100%, 60%, 1);
+
+$orangeRowColor: hsla(37, 95%, 97%, 0.8);
+$blueRowColor: hsla(190, 100%, 50%, 0.5);
+
+$gameRowColor: hsla(37, 95%, 97%, 0.8);
+$gameDetailColor: hsla(37, 100%, 90%, 1);
+$teamRowColor: hsla(190, 100%, 50%, 0.5);
+$communityRowColor: hsla(37, 95%, 97%, 0.8); /* hsla(120, 100%, 70%, 0.5); */ /*hsla(10, 50%, 80%, 0.5);*/
+$footerColor: hsla(190, 100%, 40%, 0.5); /*hsla(270, 50%, 70%, 0.5);*/
+
+$transparentWhite: hsla(0, 50%, 100%, 0.4);
+$white: #FFFFFF;
+$transparent: hsla(0, 0, 100%, 0);
+
+$catOrange: hsla(37, 90%, 50%, 0.65);
+
+$loiBg: #33B9B0;
+$loiBgAlt: #000000;
+$mikeBg: #009345;
+$mikeBgAlt: #FEAD76;/*DFCAC5;*/
+$barryBg: #8556A7;
+$barryBgAlt: #938f8E;
+
+$fontSize: 2em;
+$emphasized-font: 2.45em;
+$largeFont: 3em;

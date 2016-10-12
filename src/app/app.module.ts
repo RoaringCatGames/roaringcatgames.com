@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app.routing'; 
 
 import { HomeModule } from './home/home.module';
+import { LayoutModule } from './layout/layout.module';
 
 @NgModule({
   imports: [
@@ -14,7 +15,8 @@ import { HomeModule } from './home/home.module';
   
     AppRoutingModule,
 
-    HomeModule
+    HomeModule,
+    LayoutModule
   ],
   declarations: [AppComponent],
   providers: [],
